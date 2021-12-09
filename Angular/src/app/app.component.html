@@ -1,0 +1,17 @@
+<h1>Restful Tasks API</h1>
+
+<button (click) = "getTasksFromService()">Get all tasks</button>
+
+<div *ngFor = "let task of tasks" class="containerA">
+    <div>{{task.title}}</div>
+    <div>
+        <form (submit)= "($event)">
+            <input type="hidden" value="{{task._id}}" id="id">
+            <button type="submit">
+                Show
+            </button>
+        </form>    
+    </div>    
+</div>
+
+<app-task [taskDetail]="taskDetail"></app-task>
